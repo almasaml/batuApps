@@ -1,0 +1,23 @@
+<menu
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+                android:id="@+id/menuList"
+                android:title="Lokasi"
+                android:icon="@drawable/ic_menu_list"/>
+
+        <item
+                android:id="@+id/menuGallery"
+                android:title="Gallery"
+                android:icon="@drawable/ic_menu_gallery"/>
+
+        <item
+                android:id="@+id/menuPeta"
+                android:title="Peta"
+                android:icon="@drawable/ic_menu_maps"/>
+
+        <item
+                android:id="@+id/menuOther"
+                android:title="Lainnya"
+                android:icon="@drawable/ic_menu_other"/>
+
+</menu>
