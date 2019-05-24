@@ -11,6 +11,8 @@ import com.almas.batuapps.databinding.ActivityMainBinding
 import com.almas.batuapps.main.viewmodels.MainViewModel
 import com.almas.batuapps.menu.gallery.views.FragmentGallery
 import com.almas.batuapps.menu.listplace.views.FragmentListplace
+import com.almas.batuapps.menu.maps.views.FragmentMaps
+import com.almas.batuapps.menu.other.views.FragmentOther
 import com.almas.batuapps.utils.BottomNavigationViewHelper
 
 class MainActivity : AppCompatActivity() {
@@ -45,7 +47,8 @@ class MainActivity : AppCompatActivity() {
             when {
                 it.itemId == R.id.menuList -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentListplace.getInstance()).commit()
                 it.itemId == R.id.menuGallery -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentGallery.getInstance()).commit()
-                else ->  supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentGallery.getInstance()).commit()
+                it.itemId == R.id.menuPeta -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentMaps.getInstance()).commit()
+                else ->  supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentOther.getInstance()).commit()
             }
             return@setOnNavigationItemSelectedListener true
         }

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.almas.batuapps.R
+import com.almas.batuapps.databinding.FragmentOtherBinding
 import com.almas.batuapps.menu.other.viewmodels.FragmentOtherViewModel
 
 
@@ -20,12 +21,13 @@ class FragmentOther: Fragment() {
         }
 
     private lateinit var viewModel: FragmentOtherViewModel
-    //private lateinit var binding: FragmentOtherBinding
+    private lateinit var binding: FragmentOtherBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
-            //binding = DataBindingUtil.inflate(inflater, R.layout.fragment_other, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_other, container, false)
         viewModel =ViewModelProviders.of(this).get(FragmentOtherViewModel::class.java)
-        //binding.other = viewModel
+        binding.other = viewModel
+
+        return binding.root
     }
 }

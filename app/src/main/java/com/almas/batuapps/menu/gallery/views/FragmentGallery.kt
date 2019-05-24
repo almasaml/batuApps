@@ -8,11 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.almas.batuapps.R
-import com.almas.batuapps.databinding.ActivityMainBinding
 import com.almas.batuapps.databinding.FragmentGalleryBinding
 import com.almas.batuapps.menu.gallery.viewmodels.FragmentGalleryViewModel
-import com.almas.batuapps.menu.listplace.viewmodels.FragmentListplaceViewModel
-import com.almas.batuapps.menu.listplace.views.FragmentListplace
+
 
 class FragmentGallery: Fragment() {
     companion object {
