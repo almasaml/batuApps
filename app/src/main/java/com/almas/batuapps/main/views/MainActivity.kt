@@ -9,7 +9,9 @@ import android.view.WindowManager
 import com.almas.batuapps.R
 import com.almas.batuapps.databinding.ActivityMainBinding
 import com.almas.batuapps.main.viewmodels.MainViewModel
+import com.almas.batuapps.menu.gallery.views.FragmentGallery
 import com.almas.batuapps.menu.listplace.views.FragmentListplace
+import com.almas.batuapps.utils.BottomNavigationViewHelper
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,6 +40,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupButtomNavigation(){
         binding.bnMain.itemIconTintList = null
-
+        BottomNavigationViewHelper.disableShiftMode(binding.bnMain)
+        binding.bnMain.setOnNavigationItemSelectedListener {
+            when {
+                it.itemId == R.id.menuList -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentListplace.getInstance())
+                else -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentGallery.getInstance())
+            }
+            return@setOnNavigationItemSelectedListener true
+        }
     }
 }
