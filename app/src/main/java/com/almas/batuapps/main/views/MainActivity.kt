@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         setupToolbar()
         setupButtomNavigation()
 
-        supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentListplace.getInstance())
+        supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentListplace.getInstance()).commit()
     }
 
     private fun setupToolbar(){
@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
         BottomNavigationViewHelper.disableShiftMode(binding.bnMain)
         binding.bnMain.setOnNavigationItemSelectedListener {
             when {
-                it.itemId == R.id.menuList -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentListplace.getInstance())
-                else -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentGallery.getInstance())
+                it.itemId == R.id.menuList -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentListplace.getInstance()).commit()
+                else ->  supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentGallery.getInstance()).commit()
             }
             return@setOnNavigationItemSelectedListener true
         }
