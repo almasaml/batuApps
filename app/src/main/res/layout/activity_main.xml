@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
+            android:layout_alignParentBottom="true"
             app:itemIconTint="@drawable/state_bnve"
             app:itemTextColor="@drawable/state_bnve"
             app:menu="@menu/menu_main">
