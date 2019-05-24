@@ -17,7 +17,7 @@ import com.almas.batuapps.menu.listplace.views.FragmentListplace
 class FragmentGallery: Fragment() {
     companion object {
         fun getInstance(): Fragment {
-            return FragmentListplace()
+            return FragmentGallery()
         }
     }
 

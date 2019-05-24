@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         binding.bnMain.setOnNavigationItemSelectedListener {
             when {
                 it.itemId == R.id.menuList -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentListplace.getInstance()).commit()
+                it.itemId == R.id.menuGallery -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentGallery.getInstance()).commit()
                 else ->  supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentGallery.getInstance()).commit()
             }
             return@setOnNavigationItemSelectedListener true
