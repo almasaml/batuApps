@@ -9,14 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.almas.batuapps.R
 import com.almas.batuapps.databinding.FragmentListplaceBinding
-import com.almas.batuapps.databinding.FragmentOtherBinding
-import com.almas.batuapps.main.viewmodels.MainViewModel
 import com.almas.batuapps.menu.listplace.viewmodels.FragmentListplaceViewModel
 
 class FragmentListplace: Fragment() {
-
     companion object {
-        fun getInstance(): Fragment{
+        fun getInstance(): Fragment {
             return FragmentListplace()
         }
     }
@@ -26,9 +23,9 @@ class FragmentListplace: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_listplace, container, false)
-        viewModel =ViewModelProviders.of(this).get(FragmentListplaceViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(FragmentListplaceViewModel::class.java)
         binding.listplace = viewModel
 
+        return binding.root
     }
-
 }
