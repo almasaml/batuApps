@@ -17,7 +17,9 @@
         <android.support.v7.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/sample_image"/>
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/sample_image"
+                app:loadImage="@{itemListplace.image}"/>
 
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -36,16 +38,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    tools:text="Place Name"
+                    android:textColor="#FFFFFF"
+                    tools:text="@{itemListplace.title}"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
             <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/textLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Place Location"
-                    android:textColor="@color/colorPrimaryDark"
+                    tools:text="@{itemListplace.location}"
+                    android:textColor="#FFFFFF"
                     android:layout_alignParentTop="true"/>
         </LinearLayout>
 

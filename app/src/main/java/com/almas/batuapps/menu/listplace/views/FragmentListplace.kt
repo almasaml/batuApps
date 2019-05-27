@@ -1,14 +1,18 @@
 package com.almas.batuapps.menu.listplace.views
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.almas.batuapps.R
 import com.almas.batuapps.databinding.FragmentListplaceBinding
+import com.almas.batuapps.menu.listplace.adapters.ListplaceAdapter
+import com.almas.batuapps.menu.listplace.models.ListplaceModel
 import com.almas.batuapps.menu.listplace.viewmodels.FragmentListplaceViewModel
 
 class FragmentListplace: Fragment() {
@@ -20,12 +24,37 @@ class FragmentListplace: Fragment() {
 
     private lateinit var viewModel: FragmentListplaceViewModel
     private lateinit var binding: FragmentListplaceBinding
+    private lateinit var adapter: ListplaceAdapter
+   private var listPlace : MutableList<ListplaceModel.PlaceModel> = mutableListOf()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_listplace, container, false)
         viewModel = ViewModelProviders.of(this).get(FragmentListplaceViewModel::class.java)
         binding.listplace = viewModel
 
+        setupRecyclerView()
+        observeLiveData()
+
+        viewModel.getListplace()
+
         return binding.root
+    }
+
+    private fun setupRecyclerView() {
+        val layoutManager = LinearLayoutManager(context)
+        binding.recyclerViewPlace.layoutManager = layoutManager
+        adapter = ListplaceAdapter(activity!!, listPlace)
+        binding.recyclerViewPlace.adapter = adapter
+    }
+
+
+    private fun observeLiveData() {
+        viewModel.listplace.observe(this, Observer {
+            adapter.setData(it?.data!!)
+            adapter.notifyDataSetChanged()
+        })
+        viewModel.error.observe(this, Observer {
+
+        })
     }
 }

@@ -10,6 +10,6 @@ data class ListplaceModel(
     data class PlaceModel(
         @SerializedName("name") @Expose var name: String,
         @SerializedName("location") @Expose var location: String,
-        @SerializedName("image") @Expose var image: String,
+        @SerializedName("image") @Expose var image: String
     )
 }

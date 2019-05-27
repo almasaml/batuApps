@@ -17,7 +17,6 @@
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerViewPlace"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:listItem="@layout/item_listplace"/>
+                android:layout_height="wrap_content"/>
     </RelativeLayout>
 </layout>
