@@ -1,6 +1,7 @@
 package com.almas.batuapps.main.views
 
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -31,13 +32,16 @@ class MainActivity : AppCompatActivity() {
         viewModel =ViewModelProviders.of(this).get(MainViewModel::class.java)
         binding.main = viewModel
 
-        setupToolbar()
         setupButtomNavigation()
 
         supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentListplace.getInstance()).commit()
     }
 
-    private fun setupToolbar(){
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        for (fragment in supportFragmentManager.fragments){
+            fragment.onActivityResult(requestCode, resultCode, data)
+        }
     }
 
     private fun setupButtomNavigation(){

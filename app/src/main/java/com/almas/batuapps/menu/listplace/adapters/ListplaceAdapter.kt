@@ -1,7 +1,7 @@
 package com.almas.batuapps.menu.listplace.adapters
 
-import android.content.Context
 import android.databinding.DataBindingUtil
+import android.support.v4.app.FragmentActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,34 +9,27 @@ import com.almas.batuapps.R
 import com.almas.batuapps.databinding.ItemListplaceBinding
 import com.almas.batuapps.menu.listplace.models.ListplaceModel
 import com.almas.batuapps.menu.listplace.viewmodels.ItemListplaceViewModel
+import java.lang.ref.WeakReference
 
-class ListplaceAdapter(
-    val context: Context,
-    listPlace: MutableList<ListplaceModel.PlaceModel>
-): RecyclerView.Adapter<ListplaceAdapter.ItemPlaceViewHolder>() {
+class ListplaceAdapter(private val activity: FragmentActivity, private val listData: MutableList<ListplaceModel>): RecyclerView.Adapter<ListplaceAdapter.ListPlaceViewHolder>() {
 
-    private var listPlace: MutableList<ListplaceModel.PlaceModel> = mutableListOf()
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListplaceAdapter.ItemPlaceViewHolder {
-        val binding: ItemListplaceBinding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.item_listplace, parent, false)
-        return ItemPlaceViewHolder(binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListPlaceViewHolder {
+        val binding: ItemListplaceBinding = DataBindingUtil.inflate(LayoutInflater.from(activity), R.layout.item_listplace, parent, false)
+        return ListPlaceViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
-        return listPlace.size
+        return this.listData.size
     }
 
-    override fun onBindViewHolder(holder: ItemPlaceViewHolder, position: Int) {
-        holder.bindData(listPlace[holder.adapterPosition])
+    override fun onBindViewHolder(holder: ListPlaceViewHolder, position: Int) {
+        holder.setupData(activity, listData[holder.adapterPosition])
     }
 
-    fun setData(list: MutableList<ListplaceModel.PlaceModel>){
-        this.listPlace = list
-    }
-
-    class ItemPlaceViewHolder(private val binding: ItemListplaceBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bindData(model: ListplaceModel.PlaceModel){
-            val viewModel = ItemListplaceViewModel(model)
+    class ListPlaceViewHolder(val binding: ItemListplaceBinding) : RecyclerView.ViewHolder(binding.root){
+        fun setupData(activity: FragmentActivity, placeModel: ListplaceModel){
+            val weakContext = WeakReference(activity)
+            val viewModel = ItemListplaceViewModel(weakContext, placeModel)
             binding.itemListplace = viewModel
         }
     }

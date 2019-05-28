@@ -10,8 +10,12 @@
     </data>
 
     <RelativeLayout
+            android:id="@+id/layoutMainItemListPlace"
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="250dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{itemListplace::itemClick}">
 
         <!-- imageView item place -->
         <android.support.v7.widget.AppCompatImageView
@@ -19,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/sample_image"
-                app:loadImage="@{itemListplace.image}"/>
+                app:loadImage="@{itemListplace.imageUrl}"/>
 
             <LinearLayout
                     android:layout_width="wrap_content"

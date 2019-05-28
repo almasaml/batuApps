@@ -1,15 +1,16 @@
 package com.almas.batuapps.menu.listplace.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
-data class ListplaceModel(
-    @SerializedName("status_code") @Expose var statusCode: Int,
-    @SerializedName("data") @Expose var data: MutableList<PlaceModel>
-){
-    data class PlaceModel(
-        @SerializedName("name") @Expose var name: String,
-        @SerializedName("location") @Expose var location: String,
-        @SerializedName("image") @Expose var image: String
-    )
-}
+
+@Parcelize
+data class ListplaceModel(@SerializedName("nama") @Expose val name:String?,
+                          @SerializedName("lokasi") @Expose val location:String?,
+                          @SerializedName("kategori") @Expose val category:String?,
+                          @SerializedName("deskripsi") @Expose val description:String?,
+                          @SerializedName("thumbnail") @Expose val thumbnail:String?,
+                          @SerializedName("gambar") @Expose val image:String?) : Parcelable
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listPlace"
+                  type="com.almas.batuapps.menu.listplace.viewmodels.DetailListPlaceViewModel"/>
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/placeholder_image"
+                tools:loadImage="@{listPlace.imageUrl}"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/textViewDetailListPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{listPlace.title}"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:text="Info Malang Batu"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/textViewDetailListPlaceDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{listPlace.description}"
+                tools:text="Info Malang Batu"/>
+    </LinearLayout>
+
+</layout>

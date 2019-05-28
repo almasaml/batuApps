@@ -25,7 +25,7 @@ class FragmentListplace: Fragment() {
     private lateinit var viewModel: FragmentListplaceViewModel
     private lateinit var binding: FragmentListplaceBinding
     private lateinit var adapter: ListplaceAdapter
-   private var listPlace : MutableList<ListplaceModel.PlaceModel> = mutableListOf()
+   private var listPlace : MutableList<ListplaceModel> = mutableListOf()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_listplace, container, false)
@@ -36,8 +36,15 @@ class FragmentListplace: Fragment() {
         observeLiveData()
 
         viewModel.getListplace()
-
+        viewModel.listPlaceResponse.observe(this, Observer {
+            onListDataChange(it)
+        })
         return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.destroy()
     }
 
     private fun setupRecyclerView() {
@@ -49,12 +56,23 @@ class FragmentListplace: Fragment() {
 
 
     private fun observeLiveData() {
-        viewModel.listplace.observe(this, Observer {
-            adapter.setData(it?.data!!)
+        viewModel.listPlaceResponse.observe(this, Observer {
+            //adapter.setData(it?.data!!)
             adapter.notifyDataSetChanged()
         })
         viewModel.error.observe(this, Observer {
 
         })
+    }
+
+    private fun onListDataChange(listplace: MutableList<ListplaceModel>?){
+        if(listplace?.isNotEmpty()!!){
+            this.listPlace.clear()
+            this.listPlace.addAll(listplace)
+            binding.recyclerViewPlace.post{
+                adapter.notifyDataSetChanged()
+                binding.recyclerViewPlace.scrollToPosition(0)
+            }
+        }
     }
 }
