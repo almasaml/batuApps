@@ -21,6 +21,9 @@
         <activity android:name=".menu.listplace.views.DetailListPlaceActivity" android:screenOrientation="portrait">
 
         </activity>
+        <activity android:name=".menu.gallery.views.DetailGalleryActivity" android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

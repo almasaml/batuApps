@@ -5,7 +5,6 @@ import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.internal.BottomNavigationItemView
 import android.view.WindowManager
 import com.almas.batuapps.R
 import com.almas.batuapps.databinding.ActivityMainBinding
