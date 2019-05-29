@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="detailGallery" type="com.almas.batuapps.menu.gallery.viewmodels.DetailGalleryViewModel"/>
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/placeholder_image"
+                tools:loadImage="@{detailGallery.imageUrl}"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/textViewDetailListPlaceDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{detailGallery.judul}"
+                tools:text="Info Malang Batu"/>
+    </LinearLayout>
+
+
+</layout>
