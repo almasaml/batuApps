@@ -1,11 +1,11 @@
 package com.almas.batuapps.menu.listplace.viewmodels
 
-import android.arch.lifecycle.ViewModel
 import android.content.Intent
-import android.databinding.ObservableField
-import android.support.v4.app.FragmentActivity
 import android.util.Log
 import android.view.View
+import androidx.databinding.ObservableField
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.ViewModel
 import com.almas.batuapps.data.AppConstants
 import com.almas.batuapps.menu.listplace.models.ListplaceModel
 import com.almas.batuapps.menu.listplace.views.DetailListPlaceActivity

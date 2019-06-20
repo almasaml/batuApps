@@ -1,8 +1,8 @@
 package com.almas.batuapps.menu.listplace.viewmodels
 
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
-import android.databinding.ObservableField
+import androidx.databinding.ObservableField
+import androidx.lifecycle.AndroidViewModel
 import com.almas.batuapps.menu.listplace.models.ListplaceModel
 
 class DetailListPlaceViewModel(placeModel: ListplaceModel?, application: Application) : AndroidViewModel(application) {

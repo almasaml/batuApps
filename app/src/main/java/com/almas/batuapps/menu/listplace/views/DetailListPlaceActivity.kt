@@ -1,9 +1,9 @@
 package com.almas.batuapps.menu.listplace.views
 
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import com.almas.batuapps.R
 import com.almas.batuapps.databinding.ActivityDetailListplaceBinding
 import com.almas.batuapps.menu.listplace.models.ListplaceModel

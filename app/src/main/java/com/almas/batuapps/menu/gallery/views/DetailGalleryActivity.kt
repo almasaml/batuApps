@@ -1,9 +1,9 @@
 package com.almas.batuapps.menu.gallery.views
 
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.almas.batuapps.R
 import com.almas.batuapps.menu.gallery.viewmodels.DetailGalleryViewModel
 import com.almas.batuapps.databinding.ActivityDetailGalleryBinding

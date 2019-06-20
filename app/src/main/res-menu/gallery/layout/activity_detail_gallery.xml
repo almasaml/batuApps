@@ -10,14 +10,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="200sp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/placeholder_image"
                 tools:loadImage="@{detailGallery.imageUrl}"/>
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textViewDetailListPlaceDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

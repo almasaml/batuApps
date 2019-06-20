@@ -1,12 +1,11 @@
 package com.almas.batuapps.utils.binding
 
-import android.databinding.BindingAdapter
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import com.almas.batuapps.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.request.RequestOptions
-import java.net.URL
 
 class Converters {
     companion object {
