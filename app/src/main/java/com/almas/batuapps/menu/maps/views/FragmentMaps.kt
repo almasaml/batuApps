@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
+import android.util.Log
 import android.util.TypedValue
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -154,7 +155,7 @@ class FragmentMaps: SupportMapFragment(), OnMapReadyCallback, DirectionCallback 
     }
 
     private fun requestPermission(googleMap: GoogleMap?){
-        val rxPermission = RxPermissions(activity as Activity)
+        val rxPermission = RxPermissions(this)
         compositeDisposable.add(
             rxPermission.request(android.Manifest.permission.ACCESS_FINE_LOCATION,
                 android.Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -186,7 +187,7 @@ class FragmentMaps: SupportMapFragment(), OnMapReadyCallback, DirectionCallback 
 
     private fun getDirection(marker: Marker?){
         val tag: MarkerTag = marker?.tag as MarkerTag
-        //Log.d(AppConstants.TAG_DEBUG, "FragmentMaps # info window clicked $tag")
+        Log.d(AppConstants.TAG_DEBUG, "FragmentMaps # info window clicked $tag")
         if (tag.type==0) {
             if (!progressDialog.isShowing) {
                 progressDialog.show()
