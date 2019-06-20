@@ -1,14 +1,14 @@
 package com.almas.batuapps.menu.listplace.views
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.almas.batuapps.R
 import com.almas.batuapps.databinding.FragmentListplaceBinding
 import com.almas.batuapps.menu.listplace.adapters.ListplaceAdapter

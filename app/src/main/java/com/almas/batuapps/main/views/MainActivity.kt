@@ -1,9 +1,9 @@
 package com.almas.batuapps.main.views
 
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import android.content.Intent
-import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import com.almas.batuapps.R
@@ -13,6 +13,7 @@ import com.almas.batuapps.menu.gallery.views.FragmentGallery
 import com.almas.batuapps.menu.listplace.views.FragmentListplace
 import com.almas.batuapps.menu.maps.views.FragmentMaps
 import com.almas.batuapps.menu.other.views.FragmentOther
+import com.almas.batuapps.utils.AppHelper
 import com.almas.batuapps.utils.BottomNavigationViewHelper
 
 class MainActivity : AppCompatActivity() {
@@ -41,6 +42,15 @@ class MainActivity : AppCompatActivity() {
         for (fragment in supportFragmentManager.fragments){
             fragment.onActivityResult(requestCode, resultCode, data)
         }
+    }
+
+    override fun onBackPressed() {
+        if ((BACK_PRESSED+2000L) > System.currentTimeMillis()) {
+            super.onBackPressed()
+        } else {
+            AppHelper.displayToastNormal(this, "Tekan lagi")
+        }
+        BACK_PRESSED = System.currentTimeMillis()
     }
 
     private fun setupButtomNavigation(){
