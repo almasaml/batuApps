@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.almas.batuapps.BuildConfig
 import com.almas.batuapps.R
 import com.almas.batuapps.databinding.ChildFragmentInfoBinding
 
@@ -21,7 +22,7 @@ class ChildFragmentInfo: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding: ChildFragmentInfoBinding = DataBindingUtil.inflate(inflater, R.layout.child_fragment_info, container, false)
-        binding.textViewVersion.text = "Versi {0.0.0}"
+        binding.textViewVersion.text = getString(R.string.info_app_version, BuildConfig.VERSION_NAME)
         binding.textViewGithub.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/almasaml/batuApps"))
             context?.startActivity(intent)
