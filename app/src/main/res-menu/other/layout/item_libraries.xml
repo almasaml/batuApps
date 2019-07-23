@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View"/>
+        <variable name="library" type="com.almas.batuapps.menu.other.viewmodels.ItemLibrariesViewModel"/>
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{library.name}"
+                android:textStyle="bold"
+                android:textSize="@dimen/_14ssp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{library.url}"
+                android:textSize="@dimen/_11ssp"
+                android:textColor="@color/colorPrimary"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="@{library.license}"
+                android:textSize="@dimen/_9ssp"/>
+
+        <include
+                android:id="@+id/dividerItemLibraries"
+                android:visibility="@{safeUnbox(library.isLast()) ? View.GONE : View.VISIBLE}"
+                layout="@layout/divider"/>
+
+    </LinearLayout>
+</layout>
