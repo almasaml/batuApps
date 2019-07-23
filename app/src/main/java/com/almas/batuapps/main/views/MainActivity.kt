@@ -29,13 +29,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        viewModel =ViewModelProviders.of(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         binding.main = viewModel
 
-        setupButtomNavigation()
+        setupToolbar()
+        setupButtonNavigation()
 
-        supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentListplace.getInstance()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentListplace.getInstance()).commit()
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -48,20 +50,25 @@ class MainActivity : AppCompatActivity() {
         if ((BACK_PRESSED+2000L) > System.currentTimeMillis()) {
             super.onBackPressed()
         } else {
-            AppHelper.displayToastNormal(this, "Tekan lagi")
+            AppHelper.displayToastNormal(this, getString(R.string.clik_again))
         }
         BACK_PRESSED = System.currentTimeMillis()
     }
 
-    private fun setupButtomNavigation(){
+    private fun setupToolbar() {
+        setSupportActionBar(binding.toolbarMain)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+    }
+
+    private fun setupButtonNavigation(){
         binding.bnMain.itemIconTintList = null
         BottomNavigationViewHelper.disableShiftMode(binding.bnMain)
         binding.bnMain.setOnNavigationItemSelectedListener {
             when {
-                it.itemId == R.id.menuList -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentListplace.getInstance()).commit()
-                it.itemId == R.id.menuGallery -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentGallery.getInstance()).commit()
-                it.itemId == R.id.menuPeta -> supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentMaps.getInstance()).commit()
-                else ->  supportFragmentManager.beginTransaction().replace(R.id.fl_container, FragmentOther.getInstance()).commit()
+                it.itemId == R.id.menuList -> supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentListplace.getInstance()).commit()
+                it.itemId == R.id.menuGallery -> supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentGallery.getInstance()).commit()
+                it.itemId == R.id.menuPeta -> supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentMaps.getInstance()).commit()
+                else ->  supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentOther.getInstance()).commit()
             }
             return@setOnNavigationItemSelectedListener true
         }

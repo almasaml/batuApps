@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fragment_other_global_margin">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewAppInfo"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/ic_app_info"/>
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/fragment_other_global_margin"
+                        android:layout_marginStart="@dimen/fragment_other_global_margin"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/imageViewAppInfo"
+                        android:layout_toEndOf="@id/imageViewAppInfo">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewAppName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="@string/app_name"
+                            android:textSize="@dimen/_16ssp"
+                            android:textStyle="bold"
+                            android:textColor="@color/cardview_dark_background"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewVersion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/app_name"
+                            android:textColor="@color/cardview_dark_background"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <include layout="@layout/divider"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/contact"
+                        android:textStyle="bold"
+                        android:textColor="@color/cardview_dark_background"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_email"
+                        android:textColor="@color/cardview_dark_background"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/ic_email"
+                        android:drawableStart="@drawable/ic_email"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_twitter"
+                        android:textColor="@color/cardview_dark_background"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/ic_twitter"
+                        android:drawableStart="@drawable/ic_twitter"/>
+
+                <include layout="@layout/divider"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/support"
+                        android:textStyle="bold"
+                        android:textColor="@color/cardview_dark_background"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rate"
+                        android:textColor="@color/cardview_dark_background"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/ic_hearts"
+                        android:drawableStart="@drawable/ic_hearts"/>
+
+                <include layout="@layout/divider"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/discl"
+                        android:textStyle="bold"
+                        android:textColor="@color/cardview_dark_background"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/disclaimer"
+                        android:textColor="@color/cardview_dark_background"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/ic_high_priority"
+                        android:drawableStart="@drawable/ic_high_priority"/>
+
+                <include layout="@layout/divider"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewGithub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/link_github"
+                        android:textColor="@color/cardview_dark_background"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/ic_github"
+                        android:drawableStart="@drawable/ic_github"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>
