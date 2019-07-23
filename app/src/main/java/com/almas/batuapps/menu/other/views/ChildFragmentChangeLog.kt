@@ -31,7 +31,7 @@ class ChildFragmentChangeLog: Fragment() {
     private var listChangeLog: MutableList<ChangeLogModel> = mutableListOf()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.child_fragment_info, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.child_fragment_versi, container, false)
         viewModel = ViewModelProviders.of(this).get(ChildFragmentChangeLogViewModel::class.java)
         binding.changelog = viewModel
 
