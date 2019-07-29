@@ -1,23 +1,22 @@
 <menu
         xmlns:android="http://schemas.android.com/apk/res/android">
         <item
-                android:id="@+id/menuList"
+                android:id="@+id/listPlaceFragment"
                 android:title="Lokasi"
                 android:icon="@drawable/ic_menu_list"/>
 
         <item
-                android:id="@+id/menuGallery"
+                android:id="@+id/galleryFragment"
                 android:title="Gallery"
                 android:icon="@drawable/ic_menu_gallery"/>
 
         <item
-                android:id="@+id/menuPeta"
+                android:id="@+id/mapsFragment"
                 android:title="Peta"
                 android:icon="@drawable/ic_menu_maps"/>
 
         <item
-                android:id="@+id/menuOther"
+                android:id="@+id/otherFragment"
                 android:title="Lainnya"
                 android:icon="@drawable/ic_menu_other"/>
-
 </menu>

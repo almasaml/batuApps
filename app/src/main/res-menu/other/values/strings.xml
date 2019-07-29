@@ -67,4 +67,6 @@
     disebutkan satu persatu (<i>kalian luar biasa</i>....).
         ]]>
     </string>
+
+    <string name="info_app_version">Versi %1$s</string>
 </resources>

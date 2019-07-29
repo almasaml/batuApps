@@ -26,12 +26,16 @@
                 android:name="io.fabric.ApiKey"
                 android:value="fe0128ac33f10b07245496598e025d620f9b4706"/>
 
-        <activity android:name=".main.views.MainActivity">
+        <activity android:name=".main.views.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+
+        <activity android:name=".main.views.MainActivity"
+                    android:screenOrientation="portrait">
         </activity>
         <activity android:name=".menu.listplace.views.DetailListPlaceActivity"
                   android:screenOrientation="portrait">

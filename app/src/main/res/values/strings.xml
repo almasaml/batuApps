@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Batu Apps</string>
     <string name="clik_again">Tekan lagi untuk menutup</string>
+    <string name="fragment_main">Fragmen Main</string>
+    <string name="login">Login</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="confirm">Belum punya akun ?</string>
+    <string name="linkregistrasi">Daftar Sekarang</string>
+    <string name="registrasi">Registrasi</string>
 </resources>

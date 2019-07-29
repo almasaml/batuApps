@@ -6,6 +6,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.almas.batuapps.R
 import com.almas.batuapps.databinding.ActivityMainBinding
 import com.almas.batuapps.main.viewmodels.MainViewModel
@@ -15,6 +18,7 @@ import com.almas.batuapps.menu.maps.views.FragmentMaps
 import com.almas.batuapps.menu.other.views.FragmentOther
 import com.almas.batuapps.utils.AppHelper
 import com.almas.batuapps.utils.BottomNavigationViewHelper
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,18 +37,18 @@ class MainActivity : AppCompatActivity() {
         binding.main = viewModel
 
         setupToolbar()
-        setupButtonNavigation()
 
-        supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentListplace.getInstance()).commit()
+        //binding.bnMain.itemIconTintList = null
+        setupNavigation()
     }
 
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        for (fragment in supportFragmentManager.fragments){
-            fragment.onActivityResult(requestCode, resultCode, data)
-        }
-    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        for (fragment in supportFragmentManager.fragments){
+//            fragment.onActivityResult(requestCode, resultCode, data)
+//        }
+//    }
 
     override fun onBackPressed() {
         if ((BACK_PRESSED+2000L) > System.currentTimeMillis()) {
@@ -60,17 +64,25 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
     }
 
-    private fun setupButtonNavigation(){
+    override fun onSupportNavigateUp(): Boolean {
+        return Navigation.findNavController(this, R.id.flContainer).navigateUp()
+    }
+
+    private fun setupNavigation(){
         binding.bnMain.itemIconTintList = null
-        BottomNavigationViewHelper.disableShiftMode(binding.bnMain)
-        binding.bnMain.setOnNavigationItemSelectedListener {
-            when {
-                it.itemId == R.id.menuList -> supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentListplace.getInstance()).commit()
-                it.itemId == R.id.menuGallery -> supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentGallery.getInstance()).commit()
-                it.itemId == R.id.menuPeta -> supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentMaps.getInstance()).commit()
-                else ->  supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentOther.getInstance()).commit()
-            }
-            return@setOnNavigationItemSelectedListener true
-        }
+//        BottomNavigationViewHelper.disableShiftMode(binding.bnMain)
+//        binding.bnMain.setOnNavigationItemSelectedListener {
+//            when {
+//                it.itemId == R.id.menuList -> supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentListplace.getInstance()).commit()
+//                it.itemId == R.id.menuGallery -> supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentGallery.getInstance()).commit()
+//                it.itemId == R.id.menuPeta -> supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentMaps.getInstance()).commit()
+//                else ->  supportFragmentManager.beginTransaction().replace(R.id.flContainer, FragmentOther.getInstance()).commit()
+//            }
+//            return@setOnNavigationItemSelectedListener true
+//        }
+
+        val navController = Navigation.findNavController(this, R.id.flContainer)
+        setupActionBarWithNavController(navController)
+        NavigationUI.setupWithNavController(binding.bnMain, navController)
     }
 }

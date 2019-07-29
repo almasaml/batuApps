@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+            android:id="@+id/menu_nav_graph"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@id/listPlaceFragment">
+
+    <fragment
+            android:id="@+id/listPlaceFragment"
+            android:name="com.almas.batuapps.menu.listplace.views.FragmentListplace"
+            android:label="@string/listplace"
+            tools:layout="@layout/fragment_listplace">
+    </fragment>
+
+    <fragment
+            android:id="@+id/galleryFragment"
+            android:name="com.almas.batuapps.menu.gallery.views.FragmentGallery"
+            android:label="@string/gallery"
+            tools:layout="@layout/fragment_gallery">
+    </fragment>
+
+    <fragment
+            android:id="@+id/mapsFragment"
+            android:name="com.almas.batuapps.menu.maps.views.FragmentMaps"
+            android:label="@string/maps"
+            tools:layout="@layout/fragment_maps">
+    </fragment>
+
+    <fragment
+            android:id="@+id/otherFragment"
+            android:name="com.almas.batuapps.menu.other.views.FragmentOther"
+            android:label="@string/other"
+            tools:layout="@layout/fragment_other">
+    </fragment>
+
+</navigation>
