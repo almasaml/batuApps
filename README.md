@@ -3,27 +3,26 @@
 # Screenshot
 <table>
   <tr>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/a.jpeg" width=300/></td>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/b.jpeg" width=300/></td>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/c.jpeg" width=300/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/a.jpeg" width=auto/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/b.jpeg" width=auto/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/c.jpeg" width=auto/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/d.jpeg" width=auto/></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/d.jpeg" width=300/></td>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/e.jpeg" width=300/></td>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/f.jpeg" width=300/></td>
-  </tr>
-   <tr>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/g.jpeg" width=300/></td>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/h.jpeg" width=300/></td>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/i.jpeg" width=300/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/e.jpeg" width=auto/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/f.jpeg" width=auto/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/g.jpeg" width=auto/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/h.jpeg" width=auto/></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/j.jpeg" width=300/></td>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/k.jpeg" width=300/></td>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/l.jpeg" width=300/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/i.jpeg" width=auto/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/j.jpeg" width=auto/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/k.jpeg" width=auto/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/l.jpeg" width=auto/></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/m.jpeg" width=300/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/m.jpeg" width=auto/></td>
+    <td></td>
     <td></td>
     <td></td>
   </tr>
