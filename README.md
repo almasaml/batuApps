@@ -1,8 +1,34 @@
 # batuApps
 
 # Screenshot
-![registrasi](https://ibb.co/vmx9x8B)
-https://ibb.co/D98LZHG
+<table>
+  <tr>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/a.jpeg" width=300/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/b.jpeg" width=300/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/c.jpeg" width=300/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/d.jpeg" width=300/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/e.jpeg" width=300/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/f.jpeg" width=300/></td>
+  </tr>
+   <tr>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/g.jpeg" width=300/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/h.jpeg" width=300/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/i.jpeg" width=300/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/j.jpeg" width=300/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/k.jpeg" width=300/></td>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/l.jpeg" width=300/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/almasaml/batuApps/blob/master/ss/m.jpeg" width=300/></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
 
 # List Libraries Used in this Project
 1. <a href="https://github.com/bumptech/glide">Glide</a>
